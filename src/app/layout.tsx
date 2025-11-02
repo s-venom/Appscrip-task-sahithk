@@ -1,10 +1,13 @@
-// src/app/layout.tsx
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "mettà muse - Discover Our Products",
-  description: "Premium fashion with filters, fast shipping, and exclusive deals.",
+  title: "mettà muse | Premium Fashion Discovery",
+  description:
+    "Explore curated collections of premium clothing and accessories. Filter by occasion, fabric, and more. Fast shipping. Free over $50.",
 };
 
 export default function RootLayout({
@@ -22,12 +25,17 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ItemList",
               name: "mettà muse Products",
-              url: "https://your-plp.netlify.app",
+              url: "https://appscrip-task-yourname.netlify.app",
             }),
           }}
         />
+        <script src="https://cdn.tailwindcss.com"></script>
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
